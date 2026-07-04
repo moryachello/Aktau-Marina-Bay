@@ -1,0 +1,6 @@
+design/
+*.psb
+*.psd
+Сайт_*.jpg
+.DS_Store
+Thumbs.db
