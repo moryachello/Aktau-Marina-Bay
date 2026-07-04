@@ -80,13 +80,11 @@ ul {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(6, 21, 24, 0.3) 0%,
-    rgba(6, 21, 24, 0.15) 40%,
-    rgba(6, 21, 24, 0.55) 75%,
-    rgba(6, 21, 24, 0.82) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(6, 21, 24, 0.3) 0%,
+      rgba(6, 21, 24, 0.15) 40%,
+      rgba(6, 21, 24, 0.55) 75%,
+      rgba(6, 21, 24, 0.82) 100%);
   pointer-events: none;
 }
 
@@ -375,7 +373,7 @@ ul {
   font-size: 14px;
 }
 
-.booking-dropdown__row + .booking-dropdown__row {
+.booking-dropdown__row+.booking-dropdown__row {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
@@ -633,7 +631,7 @@ ul {
 
 .why__grid {
   display: grid;
-  grid-template-columns: 1.5fr 0.68fr;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: clamp(28px, 3vw, 44px);
   align-items: center;
   overflow: visible;
@@ -715,9 +713,12 @@ ul {
   z-index: 2;
 }
 
-/* Правая колонка — только список */
+/* Правая колонка — список по низу коллажа */
 .why__content {
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: stretch;
   max-width: 420px;
 }
 
