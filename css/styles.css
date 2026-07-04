@@ -628,17 +628,22 @@ ul {
 
 .why__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.72fr);
+  grid-template-columns: 1.5fr 0.68fr;
   gap: clamp(28px, 3vw, 44px);
   align-items: center;
+  overflow: visible;
+}
+
+.why .container.why__grid {
+  overflow: visible;
 }
 
 /* Левая колонка: заголовок поверх коллажа */
 .why__visual {
   position: relative;
-  width: calc(100% + clamp(32px, 5vw, 72px));
-  max-width: 680px;
-  margin-left: clamp(-32px, -4vw, -16px);
+  width: 100%;
+  max-width: none;
+  overflow: visible;
 }
 
 .why__title {
