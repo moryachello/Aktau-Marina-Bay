@@ -612,7 +612,7 @@ ul {
   position: relative;
   padding: 100px 0 120px;
   background: var(--color-bg);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .why__decor {
@@ -628,17 +628,17 @@ ul {
 
 .why__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-  gap: clamp(48px, 7vw, 96px);
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.72fr);
+  gap: clamp(28px, 3vw, 44px);
   align-items: center;
 }
 
 /* Левая колонка: заголовок поверх коллажа */
 .why__visual {
   position: relative;
-  width: 100%;
-  max-width: 560px;
-  margin-inline: auto;
+  width: calc(100% + clamp(32px, 5vw, 72px));
+  max-width: 680px;
+  margin-left: clamp(-32px, -4vw, -16px);
 }
 
 .why__title {
@@ -647,7 +647,7 @@ ul {
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
-  width: min(440px, 94%);
+  width: min(480px, 96%);
   margin: 0;
   font-size: clamp(18px, 2.4vw, 28px);
   font-weight: 300;
@@ -655,6 +655,7 @@ ul {
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-align: center;
+  color: var(--color-white);
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.65);
   pointer-events: none;
 }
@@ -692,11 +693,12 @@ ul {
   z-index: 1;
 }
 
-/* Синяя зона — ресторан снизу слева */
+/* Синяя зона — ресторан снизу слева, выходит за левый край */
 .why__cell--2 {
   grid-column: 1 / 8;
   grid-row: 7 / 13;
   z-index: 1;
+  margin-left: -14%;
 }
 
 /* Зелёная зона — яхты вертикально справа, перекрывает обе */
@@ -721,65 +723,75 @@ ul {
 /* Правая колонка — только список */
 .why__content {
   align-self: center;
+  max-width: 420px;
 }
 
 .why__list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: clamp(52px, 7vw, 76px) 1px 1fr;
+  column-gap: clamp(18px, 2.5vw, 28px);
+  align-items: stretch;
 }
 
 .why__item {
-  display: flex;
-  align-items: stretch;
-  padding: 30px 0;
-}
-
-.why__item:first-child {
-  padding-top: 0;
-}
-
-.why__item:last-child {
-  padding-bottom: 0;
+  display: contents;
 }
 
 .why__num {
-  flex-shrink: 0;
-  min-width: 72px;
-  font-size: clamp(56px, 7vw, 88px);
+  grid-column: 1;
+  padding: 28px 0;
+  font-size: clamp(52px, 6.5vw, 80px);
   font-weight: 200;
   line-height: 0.85;
   letter-spacing: -0.02em;
   color: var(--color-gold);
-  align-self: flex-start;
+  align-self: start;
+}
+
+.why__item:first-child .why__num {
+  padding-top: 0;
+}
+
+.why__item:last-child .why__num {
+  padding-bottom: 0;
 }
 
 .why__divider {
-  flex-shrink: 0;
+  grid-column: 2;
   width: 1px;
+  margin: 0;
+  background: rgba(197, 164, 126, 0.4);
   align-self: stretch;
-  margin: 2px 28px 0 16px;
-  background: rgba(197, 164, 126, 0.45);
+  min-height: 44px;
 }
 
 .why__item-body {
-  flex: 1;
+  grid-column: 3;
   min-width: 0;
-  padding-top: 8px;
+  padding: 28px 0 28px;
+}
+
+.why__item:first-child .why__item-body {
+  padding-top: 0;
+}
+
+.why__item:last-child .why__item-body {
+  padding-bottom: 0;
 }
 
 .why__item-title {
-  font-size: clamp(15px, 1.8vw, 17px);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--color-gold);
-  margin-bottom: 8px;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: var(--color-white);
+  margin-bottom: 6px;
 }
 
 .why__item-text {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
-  line-height: 1.6;
-  color: var(--color-text-muted);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ===== Responsive ===== */
@@ -840,11 +852,21 @@ ul {
 
   .why__grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
 
   .why__visual {
-    max-width: 480px;
+    max-width: 100%;
+    width: calc(100% + 24px);
+    margin-left: -12px;
+  }
+
+  .why__cell--2 {
+    margin-left: -10%;
+  }
+
+  .why__content {
+    max-width: none;
   }
 
   .why__title {
@@ -856,12 +878,7 @@ ul {
   }
 
   .why__num {
-    min-width: 56px;
     font-size: clamp(44px, 12vw, 64px);
-  }
-
-  .why__divider {
-    margin: 2px 20px 0 12px;
   }
 }
 
@@ -886,11 +903,11 @@ ul {
     gap: 8px;
   }
 
-  .why__item {
-    padding: 24px 0;
+  .why__item-body {
+    padding: 22px 0;
   }
 
-  .why__divider {
-    margin: 2px 16px 0 10px;
+  .why__num {
+    padding: 22px 0;
   }
 }
