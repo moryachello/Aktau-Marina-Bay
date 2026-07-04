@@ -69,7 +69,7 @@ ul {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  background: var(--color-bg-dark) url("../images/hero-bg.jpg") center / cover no-repeat;
+  background: var(--color-bg-dark) url("../images/main.webp") center / cover no-repeat;
 }
 
 .hero__overlay {
