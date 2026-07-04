@@ -224,10 +224,10 @@ ul {
   min-height: 100svh;
   display: flex;
   flex-direction: column;
-  background: var(--color-bg-dark) url("../images/main.webp") center / cover no-repeat;
+  background: var(--color-bg-dark) url("../images/main.png") center / cover no-repeat;
 }
 
-.hero__overlay {
+/* .hero__overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg,
@@ -236,7 +236,7 @@ ul {
       rgba(6, 21, 24, 0.55) 75%,
       rgba(6, 21, 24, 0.82) 100%);
   pointer-events: none;
-}
+} */
 
 .hero__inner {
   position: relative;
