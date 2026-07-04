@@ -654,7 +654,7 @@ ul {
   top: clamp(12px, 2vw, 24px);
   left: 50%;
   right: auto;
-  transform: none;
+  transform: translateY(-50%);
   z-index: 5;
   width: min(520px, calc(50% - 16px));
   margin: 0;
