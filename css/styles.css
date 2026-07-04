@@ -655,10 +655,12 @@ ul {
   position: absolute;
   top: clamp(12px, 2vw, 24px);
   left: 50%;
-  transform: translateX(-50%);
+  right: auto;
+  transform: none;
   z-index: 5;
-  width: min(420px, 38vw);
+  width: min(520px, calc(50% - 16px));
   margin: 0;
+  padding-right: 24px;
   font-size: clamp(18px, 2.4vw, 28px);
   font-weight: 300;
   line-height: 1.25;
@@ -720,19 +722,27 @@ ul {
 }
 
 .why__list {
-  display: grid;
-  grid-template-columns: clamp(52px, 7vw, 76px) 1px 1fr;
-  column-gap: clamp(18px, 2.5vw, 28px);
-  align-items: stretch;
+  display: flex;
+  flex-direction: column;
 }
 
 .why__item {
-  display: contents;
+  display: grid;
+  grid-template-columns: clamp(52px, 7vw, 76px) 1px 1fr;
+  column-gap: clamp(18px, 2.5vw, 28px);
+  align-items: center;
+  padding: 26px 0;
+}
+
+.why__item:first-child {
+  padding-top: 0;
+}
+
+.why__item:last-child {
+  padding-bottom: 0;
 }
 
 .why__num {
-  grid-column: 1;
-  padding: 28px 0;
   font-size: clamp(52px, 6.5vw, 80px);
   font-weight: 200;
   line-height: 0.85;
@@ -741,35 +751,16 @@ ul {
   align-self: start;
 }
 
-.why__item:first-child .why__num {
-  padding-top: 0;
-}
-
-.why__item:last-child .why__num {
-  padding-bottom: 0;
-}
-
 .why__divider {
-  grid-column: 2;
   width: 1px;
-  margin: 0;
+  height: 52px;
   background: rgba(197, 164, 126, 0.4);
-  align-self: stretch;
-  min-height: 44px;
+  align-self: center;
+  justify-self: center;
 }
 
 .why__item-body {
-  grid-column: 3;
   min-width: 0;
-  padding: 28px 0 28px;
-}
-
-.why__item:first-child .why__item-body {
-  padding-top: 0;
-}
-
-.why__item:last-child .why__item-body {
-  padding-bottom: 0;
 }
 
 .why__item-title {
@@ -862,8 +853,8 @@ ul {
   }
 
   .why__title {
-    width: min(360px, 72vw);
-    font-size: clamp(16px, 4.5vw, 22px);
+    width: min(360px, calc(100% - 52%));
+    left: 50%;
   }
 
   .why__num {
@@ -892,11 +883,17 @@ ul {
     min-height: 320px;
   }
 
-  .why__item-body {
+  .why__title {
+    font-size: clamp(16px, 4.5vw, 22px);
+    width: calc(100% - 32px);
+    left: 16px;
+  }
+
+  .why__item {
     padding: 22px 0;
   }
 
-  .why__num {
-    padding: 22px 0;
+  .why__divider {
+    height: 44px;
   }
 }
