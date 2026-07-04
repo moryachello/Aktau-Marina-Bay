@@ -195,8 +195,64 @@
     updateGuestsDisplay();
   }
 
+  /* ===== Rooms gallery & lightbox ===== */
+  function initRooms() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = lightbox?.querySelector('.lightbox__close');
+
+    function openLightbox(src, alt) {
+      lightboxImg.src = src;
+      lightboxImg.alt = alt || '';
+      lightbox.hidden = false;
+      document.body.classList.add('lightbox-open');
+      lightboxClose.focus();
+    }
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      lightboxImg.src = '';
+      document.body.classList.remove('lightbox-open');
+    }
+
+    document.querySelectorAll('[data-room]').forEach((card) => {
+      const hero = card.querySelector('.room-card__hero');
+      const thumbs = card.querySelectorAll('.room-card__thumb');
+      const zoomBtn = card.querySelector('.room-card__zoom');
+      const selectBtn = card.querySelector('.room-card__btn');
+      const title = card.querySelector('.room-card__title')?.textContent?.trim() || 'номер';
+
+      thumbs.forEach((thumb) => {
+        thumb.addEventListener('click', () => {
+          const full = thumb.dataset.full;
+          if (!full) return;
+          hero.src = full;
+          thumbs.forEach((t) => t.classList.remove('is-active'));
+          thumb.classList.add('is-active');
+        });
+      });
+
+      zoomBtn?.addEventListener('click', () => {
+        openLightbox(hero.src, hero.alt);
+      });
+
+      selectBtn?.addEventListener('click', () => {
+        showToast(`Выбран номер «${title}» (демо)`);
+      });
+    });
+
+    lightboxClose?.addEventListener('click', closeLightbox);
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+    });
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initMenu();
     initBooking();
+    initRooms();
   });
 })();
