@@ -651,6 +651,11 @@ ul {
 }
 
 .why__title {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 100%;
   margin: 0 0 clamp(32px, 4vw, 56px);
   font-size: var(--why-heading-size);
   font-weight: 300;
