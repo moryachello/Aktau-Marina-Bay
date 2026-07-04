@@ -656,7 +656,7 @@ ul {
   right: auto;
   transform: translateX(-50%);
   z-index: 5;
-  width: min(880px, 62%);
+  width: min(880px, 45%);
   margin: 0;
   padding-right: 0;
   font-size: 50px;
@@ -749,7 +749,6 @@ ul {
   line-height: 0.85;
   letter-spacing: -0.02em;
   color: var(--color-gold);
-  align-self: start;
 }
 
 .why__divider {
