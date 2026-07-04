@@ -6,10 +6,14 @@
   <meta name="description" content="Aktau Marina Bay — отель на первой береговой линии Каспийского моря в Актау">
   <title>Aktau Marina Bay — отель у моря</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+  <link rel="preload" href="fonts/montserrat-300-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/montserrat-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/montserrat-600-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -20,7 +24,7 @@
 
     <div class="hero__inner">
       <header class="header">
-        <div class="container header__container">
+        <div class="container header__container reveal">
           <a href="#" class="logo">
             <img src="images/logo.png" alt="" class="logo__icon" width="44" height="44">
             <img src="images/logo2.png" alt="Aktau Marina Bay" class="logo__wordmark" width="180" height="28">
@@ -43,8 +47,8 @@
 
       <div class="container hero__content">
         <div class="hero__text">
-          <h1 class="hero__title">Там, где море начинается у&nbsp;вашего порога</h1>
-          <p class="hero__subtitle">
+          <h1 class="hero__title reveal">Там, где море начинается у&nbsp;вашего порога</h1>
+          <p class="hero__subtitle reveal">
             Остановитесь у самого моря. Комфортный отдых, деловые возможности
             и инфраструктура курорта — в нескольких шагах от вашего номера.
           </p>
@@ -54,7 +58,7 @@
       <!-- Booking bar — внутри hero, на затемнённой части -->
       <div class="booking">
         <div class="container booking__container">
-          <button class="booking__field" type="button" data-booking-trigger="checkin">
+          <button class="booking__field reveal" type="button" data-booking-trigger="checkin">
             <div class="booking__field-body">
               <span class="booking__label">Заезд</span>
               <span class="booking__value" id="checkin-display">10.06.2026</span>
@@ -68,7 +72,7 @@
             <input type="date" class="booking__input-hidden" id="checkin-input" value="2026-06-10" tabindex="-1" aria-hidden="true">
           </button>
 
-          <button class="booking__field" type="button" data-booking-trigger="checkout">
+          <button class="booking__field reveal" type="button" data-booking-trigger="checkout">
             <div class="booking__field-body">
               <span class="booking__label">Выезд</span>
               <span class="booking__value" id="checkout-display">11.06.2026</span>
@@ -82,7 +86,7 @@
             <input type="date" class="booking__input-hidden" id="checkout-input" value="2026-06-11" tabindex="-1" aria-hidden="true">
           </button>
 
-          <button class="booking__field" type="button" data-booking-trigger="guests" aria-expanded="false" aria-controls="guests-dropdown">
+          <button class="booking__field reveal" type="button" data-booking-trigger="guests" aria-expanded="false" aria-controls="guests-dropdown">
             <div class="booking__field-body">
               <span class="booking__label">Гости</span>
               <span class="booking__value" id="guests-display">2 взрослых, 0 детей</span>
@@ -93,7 +97,7 @@
             </svg>
           </button>
 
-          <div class="booking__actions">
+          <div class="booking__actions reveal">
             <button class="booking__promo-btn" type="button" id="promo-toggle">У меня есть промокод</button>
             <button class="btn-primary" type="button" id="booking-search">Найти номер</button>
           </div>
@@ -415,6 +419,541 @@
       </div>
     </div>
   </section>
+
+  <!-- ===== BLOCK 5: Центр биохакинга ===== -->
+  <section class="bio" id="biohacking">
+    <div class="container bio__body">
+      <h2 class="bio__title">ЦЕНТР БИОХАКИНГА<br>FIT REVOLUTION</h2>
+
+      <div class="bio__grid">
+        <div class="bio__visual">
+          <div class="bio__gallery">
+            <img class="bio__photo bio__photo--1" src="images/bio-1.webp" alt="Криотерапия в Fit Revolution" width="1024" height="713" loading="lazy">
+            <img class="bio__photo bio__photo--2" src="images/bio-2.webp" alt="Red Light терапия" width="820" height="1024" loading="lazy">
+            <img class="bio__photo bio__photo--3" src="images/bio-3.webp" alt="Кардио-тренировки в кислородной маске" width="1024" height="700" loading="lazy">
+          </div>
+        </div>
+
+        <div class="bio__content">
+          <h3 class="bio__heading">Инновационный фитнес для избранных.</h3>
+          <p class="bio__lead">Протокол тренировок, доступный ранее лишь топовым атлетам, чемпионам и суперзвездам из США, теперь открыт для гостей нашего комплекса.</p>
+          <p class="bio__text">Мы привезли новейшее американское оборудование и создали процедурные кабинеты, которые помогут вам оставаться:</p>
+          <ul class="bio__list">
+            <li>здоровыми</li>
+            <li>стрессоустойчивыми</li>
+            <li>продуктивными</li>
+            <li>сконцентрированными</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 6: Услуги Fit Revolution ===== -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="services__carousel" id="services-carousel">
+        <button class="services__arrow services__arrow--prev" type="button" aria-label="Предыдущая услуга">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+        </button>
+
+        <div class="services__viewport">
+          <div class="services__track" id="services-track">
+          <div class="services__slide">
+          <article class="services__card">
+            <img class="services__icon" src="images/icon-fit-1.png" alt="" width="138" height="109" loading="lazy">
+            <div class="services__body">
+              <h3 class="services__title">Кардио-тренировки в&nbsp;кислородной маске</h3>
+              <p class="services__text">Использование велотренажеров ASSAULT в&nbsp;сочетании с&nbsp;вдыханием воздуха с&nbsp;95% кислорода. Повышает выносливость, ускоряет метаболизм, сжигает жир и&nbsp;исключает мышечную усталость (вывод молочной кислоты).</p>
+            </div>
+          </article>
+          </div>
+
+          <div class="services__slide">
+          <article class="services__card">
+            <img class="services__icon" src="images/icon-fit-2.png" alt="" width="110" height="109" loading="lazy">
+            <div class="services__body">
+              <h3 class="services__title">Инфракрасный свет (Red Light)</h3>
+              <p class="services__text">Стимулирует клеточный метаболизм, глубоко проникает в&nbsp;ткани, снижает общую усталость и&nbsp;заряжает энергией. Дополнительно активирует выработку коллагена, омолаживая кожу.</p>
+            </div>
+          </article>
+          </div>
+
+          <div class="services__slide">
+          <article class="services__card">
+            <img class="services__icon" src="images/icon-fit-3.png" alt="" width="110" height="110" loading="lazy">
+            <div class="services__body">
+              <h3 class="services__title">PEMF Mat (Пульсирующий электромагнит)</h3>
+              <p class="services__text">Щелочит организм, уменьшает боль и&nbsp;воспаление в&nbsp;суставах и&nbsp;мышцах. Помогает расслабиться, укрепляет опорно-двигательный аппарат и&nbsp;восстанавливает циркадные ритмы для здорового сна.</p>
+            </div>
+          </article>
+          </div>
+
+          <div class="services__slide">
+          <article class="services__card">
+            <img class="services__icon" src="images/icon-fit-1.png" alt="" width="138" height="109" loading="lazy">
+            <div class="services__body">
+              <h3 class="services__title">Кардио-тренировки в&nbsp;кислородной маске</h3>
+              <p class="services__text">Использование велотренажеров ASSAULT в&nbsp;сочетании с&nbsp;вдыханием воздуха с&nbsp;95% кислорода. Повышает выносливость, ускоряет метаболизм, сжигает жир и&nbsp;исключает мышечную усталость (вывод молочной кислоты).</p>
+            </div>
+          </article>
+          </div>
+
+          <div class="services__slide">
+          <article class="services__card">
+            <img class="services__icon" src="images/icon-fit-2.png" alt="" width="110" height="109" loading="lazy">
+            <div class="services__body">
+              <h3 class="services__title">Инфракрасный свет (Red Light)</h3>
+              <p class="services__text">Стимулирует клеточный метаболизм, глубоко проникает в&nbsp;ткани, снижает общую усталость и&nbsp;заряжает энергией. Дополнительно активирует выработку коллагена, омолаживая кожу.</p>
+            </div>
+          </article>
+          </div>
+
+          <div class="services__slide">
+          <article class="services__card">
+            <img class="services__icon" src="images/icon-fit-3.png" alt="" width="110" height="110" loading="lazy">
+            <div class="services__body">
+              <h3 class="services__title">PEMF Mat (Пульсирующий электромагнит)</h3>
+              <p class="services__text">Щелочит организм, уменьшает боль и&nbsp;воспаление в&nbsp;суставах и&nbsp;мышцах. Помогает расслабиться, укрепляет опорно-двигательный аппарат и&nbsp;восстанавливает циркадные ритмы для здорового сна.</p>
+            </div>
+          </article>
+          </div>
+          </div>
+        </div>
+
+        <button class="services__arrow services__arrow--next" type="button" aria-label="Следующая услуга">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 7: Ресторан ===== -->
+  <section class="restaurant" id="restaurant">
+    <div class="restaurant__bg" aria-hidden="true"></div>
+    <div class="restaurant__shade" aria-hidden="true"></div>
+
+    <div class="restaurant__layout">
+      <div class="restaurant__main">
+        <div class="restaurant__main-inner">
+          <h2 class="restaurant__heading">Панорамный ресторан<br>над Каспием</h2>
+          <p class="restaurant__intro">Ресторан на&nbsp;верхнем этаже комплекса открывает панорамные виды на&nbsp;Каспийское море, яхт-клуб, Скальную тропу и&nbsp;побережье Актау.</p>
+          <p class="restaurant__intro">Изысканная кухня и&nbsp;высокий уровень сервиса создают идеальную атмосферу для завтраков, деловых встреч, романтических ужинов и&nbsp;торжественных мероприятий.</p>
+        </div>
+      </div>
+
+      <aside class="restaurant__panel">
+        <div class="restaurant__panel-inner">
+        <ul class="restaurant__list">
+          <li class="restaurant__item">
+            <span class="restaurant__num">01</span>
+            <span class="restaurant__divider" aria-hidden="true"></span>
+            <div class="restaurant__item-body">
+              <h3 class="restaurant__item-title">Панорамный вид на&nbsp;море</h3>
+              <p class="restaurant__item-text">Потрясающий обзор на&nbsp;Каспий, яхт-клуб и&nbsp;знаменитую Скальную тропу из&nbsp;любой точки зала</p>
+            </div>
+          </li>
+          <li class="restaurant__item">
+            <span class="restaurant__num">02</span>
+            <span class="restaurant__divider" aria-hidden="true"></span>
+            <div class="restaurant__item-body">
+              <h3 class="restaurant__item-title">VIP-кабинеты для приватных встреч</h3>
+              <p class="restaurant__item-text">Уединённые VIP-зоны с&nbsp;панорамными окнами для деловых встреч и&nbsp;камерных мероприятий</p>
+            </div>
+          </li>
+          <li class="restaurant__item">
+            <span class="restaurant__num">03</span>
+            <span class="restaurant__divider" aria-hidden="true"></span>
+            <div class="restaurant__item-body">
+              <h3 class="restaurant__item-title">Идеальная площадка для торжеств</h3>
+              <p class="restaurant__item-text">Безупречные условия для проведения свадеб, корпоративов, юбилеев и&nbsp;семейных торжеств</p>
+            </div>
+          </li>
+          <li class="restaurant__item">
+            <span class="restaurant__num">04</span>
+            <span class="restaurant__divider" aria-hidden="true"></span>
+            <div class="restaurant__item-body">
+              <h3 class="restaurant__item-title">Вкусная кухня и&nbsp;высокий сервис</h3>
+              <p class="restaurant__item-text">Изысканная кухня и&nbsp;безупречный сервис для особых впечатлений</p>
+            </div>
+          </li>
+        </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 8: Бизнес ===== -->
+  <section class="business" id="business">
+    <div class="business__bg" aria-hidden="true"></div>
+
+    <div class="container business__inner">
+      <h2 class="business__heading">Пространство, где команды становятся сильнее, а&nbsp;идеи находят развитие</h2>
+      <p class="business__intro">Комплекс разработан с&nbsp;учётом строгих требований предпринимателей, топ-менеджеров, корпоративных клиентов и&nbsp;сообществ. Здесь созданы идеальные условия для работы, развития и&nbsp;networking.</p>
+
+      <div class="business__tabbed">
+          <div class="business__tabs" role="tablist" aria-label="Направления">
+            <button
+              class="business__tab is-active"
+              type="button"
+              role="tab"
+              id="business-tab-business"
+              aria-selected="true"
+              aria-controls="business-panel-business"
+            >
+              <svg class="business__tab-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect x="3" y="7" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M8 7V5.5A2.5 2.5 0 0110.5 3h3A2.5 2.5 0 0116 5.5V7" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M3 12h18" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M12 12v3.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M10.5 14.5h3" stroke="currentColor" stroke-width="1.2"/>
+              </svg>
+              Для бизнеса
+            </button>
+            <button
+              class="business__tab"
+              type="button"
+              role="tab"
+              id="business-tab-groups"
+              aria-selected="false"
+              aria-controls="business-panel-groups"
+              tabindex="-1"
+            >
+              <svg class="business__tab-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="16.5" cy="9" r="2.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M14 19c0-2.2 1.6-4 3.5-4.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              Для групп и&nbsp;сообществ
+            </button>
+          </div>
+
+          <div class="business__panels">
+            <div
+              class="business__panel is-active"
+              role="tabpanel"
+              id="business-panel-business"
+              aria-labelledby="business-tab-business"
+              aria-hidden="false"
+            >
+              <div class="business__cards">
+                <article class="business__card">
+                  <img class="business__card-icon" src="images/icon-biz-1.png" alt="" width="72" height="72" loading="lazy">
+                  <span class="business__divider" aria-hidden="true"></span>
+                  <h3 class="business__card-title">Современный конференц-зал</h3>
+                  <p class="business__card-text">Мультимедийное пространство для тренингов, презентаций и&nbsp;корпоративных мероприятий</p>
+                </article>
+                <article class="business__card">
+                  <img class="business__card-icon" src="images/icon-biz-2.png" alt="" width="72" height="72" loading="lazy">
+                  <span class="business__divider" aria-hidden="true"></span>
+                  <h3 class="business__card-title">Пространство для переговоров</h3>
+                  <p class="business__card-text">Зоны в&nbsp;лобби с&nbsp;мягкими креслами для неформальных деловых встреч</p>
+                </article>
+                <article class="business__card">
+                  <img class="business__card-icon" src="images/icon-biz-3.png" alt="" width="72" height="72" loading="lazy">
+                  <span class="business__divider" aria-hidden="true"></span>
+                  <h3 class="business__card-title">Высокоскоростной интернет</h3>
+                  <p class="business__card-text">Стабильное высокоскоростное подключение по&nbsp;всему комплексу</p>
+                </article>
+              </div>
+            </div>
+
+            <div
+              class="business__panel"
+              role="tabpanel"
+              id="business-panel-groups"
+              aria-labelledby="business-tab-groups"
+              aria-hidden="true"
+            >
+              <div class="business__cards">
+                <article class="business__card">
+                  <img class="business__card-icon" src="images/icon-biz-1.png" alt="" width="72" height="72" loading="lazy">
+                  <span class="business__divider" aria-hidden="true"></span>
+                  <h3 class="business__card-title">Современный конференц-зал</h3>
+                  <p class="business__card-text">Мультимедийное пространство для тренингов, презентаций и&nbsp;корпоративных мероприятий</p>
+                </article>
+                <article class="business__card">
+                  <img class="business__card-icon" src="images/icon-biz-2.png" alt="" width="72" height="72" loading="lazy">
+                  <span class="business__divider" aria-hidden="true"></span>
+                  <h3 class="business__card-title">Пространство для переговоров</h3>
+                  <p class="business__card-text">Зоны в&nbsp;лобби с&nbsp;мягкими креслами для неформальных деловых встреч</p>
+                </article>
+                <article class="business__card">
+                  <img class="business__card-icon" src="images/icon-biz-3.png" alt="" width="72" height="72" loading="lazy">
+                  <span class="business__divider" aria-hidden="true"></span>
+                  <h3 class="business__card-title">Высокоскоростной интернет</h3>
+                  <p class="business__card-text">Стабильное высокоскоростное подключение по&nbsp;всему комплексу</p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 9: Откройте Мангистау ===== -->
+  <section class="discover" id="discover">
+    <div class="discover__bg" aria-hidden="true"></div>
+    <div class="discover__shade" aria-hidden="true"></div>
+
+    <div class="container discover__inner">
+      <h2 class="discover__heading">Откройте для себя Мангистаускую область</h2>
+      <p class="discover__intro">Aktau Marina Bay&nbsp;&mdash; это не&nbsp;только комфортный отдых у&nbsp;моря, но&nbsp;и&nbsp;отправная точка для знакомства с&nbsp;уникальной природой, историей и&nbsp;культурой Мангистау.</p>
+      <p class="discover__intro">Наша команда поможет организовать путешествие, которое позволит увидеть самые красивые и&nbsp;знаковые места региона:</p>
+    </div>
+
+    <div class="discover__carousel" id="discover-carousel">
+      <button class="discover__arrow discover__arrow--prev" type="button" aria-label="Предыдущая карточка">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+
+      <div class="container discover__carousel-inner">
+        <div class="discover__viewport">
+          <div class="discover__track" id="discover-track">
+            <article class="discover__card">
+              <img class="discover__card-bg" src="images/discover/bozzhyra.webp" alt="" width="370" height="850" loading="lazy">
+              <div class="discover__card-overlay" aria-hidden="true"></div>
+              <div class="discover__card-content">
+                <h3 class="discover__card-title">Экскурсии в&nbsp;урочище Бозжыра</h3>
+                <p class="discover__card-text">Путешествие к&nbsp;одному из&nbsp;самых впечатляющих природных символов Казахстана с&nbsp;панорамными видами на&nbsp;величественные меловые скалы и&nbsp;бескрайние просторы Мангистау. Уникальные ландшафты и&nbsp;захватывающие смотровые площадки делают эту поездку незабываемым впечатлением для каждого гостя.</p>
+              </div>
+            </article>
+
+            <article class="discover__card">
+              <img class="discover__card-bg" src="images/discover/beket-ata.webp" alt="" width="370" height="850" loading="lazy">
+              <div class="discover__card-overlay" aria-hidden="true"></div>
+              <div class="discover__card-content">
+                <h3 class="discover__card-title">Посещение Бекет-Ата</h3>
+                <p class="discover__card-text">Паломничество к&nbsp;святыне и&nbsp;поездка к&nbsp;одному из&nbsp;главных духовных мест Мангистау с&nbsp;потрясающими видами на&nbsp;скалистое побережье</p>
+              </div>
+            </article>
+
+            <article class="discover__card">
+              <img class="discover__card-bg" src="images/discover/fishing.webp" alt="" width="370" height="850" loading="lazy">
+              <div class="discover__card-overlay" aria-hidden="true"></div>
+              <div class="discover__card-content">
+                <h3 class="discover__card-title">Морская рыбалка и&nbsp;прогулки</h3>
+                <p class="discover__card-text">Морские прогулки и&nbsp;рыбалка в&nbsp;Каспийском море с&nbsp;опытными гидами&nbsp;&mdash; отдых на&nbsp;воде и&nbsp;свежий улов</p>
+              </div>
+            </article>
+
+            <article class="discover__card">
+              <img class="discover__card-bg" src="images/discover/bozzhyra.webp" alt="" width="370" height="850" loading="lazy">
+              <div class="discover__card-overlay" aria-hidden="true"></div>
+              <div class="discover__card-content">
+                <h3 class="discover__card-title">Экскурсии в&nbsp;урочище Бозжыра</h3>
+                <p class="discover__card-text">Путешествие к&nbsp;одному из&nbsp;самых впечатляющих природных символов Казахстана с&nbsp;панорамными видами на&nbsp;величественные меловые скалы и&nbsp;бескрайние просторы Мангистау. Уникальные ландшафты и&nbsp;захватывающие смотровые площадки делают эту поездку незабываемым впечатлением для каждого гостя.</p>
+              </div>
+            </article>
+
+            <article class="discover__card">
+              <img class="discover__card-bg" src="images/discover/beket-ata.webp" alt="" width="370" height="850" loading="lazy">
+              <div class="discover__card-overlay" aria-hidden="true"></div>
+              <div class="discover__card-content">
+                <h3 class="discover__card-title">Посещение Бекет-Ата</h3>
+                <p class="discover__card-text">Паломничество к&nbsp;святыне и&nbsp;поездка к&nbsp;одному из&nbsp;главных духовных мест Мангистау с&nbsp;потрясающими видами на&nbsp;скалистое побережье</p>
+              </div>
+            </article>
+
+            <article class="discover__card">
+              <img class="discover__card-bg" src="images/discover/fishing.webp" alt="" width="370" height="850" loading="lazy">
+              <div class="discover__card-overlay" aria-hidden="true"></div>
+              <div class="discover__card-content">
+                <h3 class="discover__card-title">Морская рыбалка и&nbsp;прогулки</h3>
+                <p class="discover__card-text">Морские прогулки и&nbsp;рыбалка в&nbsp;Каспийском море с&nbsp;опытными гидами&nbsp;&mdash; отдых на&nbsp;воде и&nbsp;свежий улов</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <button class="discover__arrow discover__arrow--next" type="button" aria-label="Следующая карточка">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== BLOCK 10: Расположение ===== -->
+  <section class="location" id="location">
+    <div class="container location__layout">
+      <div class="location__list-wrap">
+        <ul class="location__list">
+          <li>
+            <button
+              class="location__item"
+              type="button"
+              data-lon="51.1685"
+              data-lat="43.6560"
+              data-zoom="15"
+              aria-pressed="false"
+            >
+              <span class="location__item-main">
+                <span class="location__item-title">Акимат города Актау</span>
+                <span class="location__item-text">для гостей, приезжающих по&nbsp;деловым вопросам</span>
+              </span>
+              <span class="location__item-meta">
+                <img class="location__item-icon" src="images/icon-loc-walk.png" alt="" width="28" height="40" loading="lazy">
+                <span class="location__item-time">5&nbsp;мин</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="location__item"
+              type="button"
+              data-lon="51.1758"
+              data-lat="43.6442"
+              data-zoom="15"
+              aria-pressed="false"
+            >
+              <span class="location__item-main">
+                <span class="location__item-title">Парк «Акбота»</span>
+                <span class="location__item-text">для семей и&nbsp;прогулок на&nbsp;смотровых площадках</span>
+              </span>
+              <span class="location__item-meta">
+                <img class="location__item-icon" src="images/icon-loc-walk.png" alt="" width="28" height="40" loading="lazy">
+                <span class="location__item-time">7&nbsp;мин</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="location__item"
+              type="button"
+              data-lon="51.1680"
+              data-lat="43.6265"
+              data-zoom="15"
+              aria-pressed="false"
+            >
+              <span class="location__item-main">
+                <span class="location__item-title">Скальная тропа</span>
+                <span class="location__item-text">для активного отдыха и&nbsp;необычных фото</span>
+              </span>
+              <span class="location__item-meta">
+                <img class="location__item-icon" src="images/icon-loc-walk.png" alt="" width="28" height="40" loading="lazy">
+                <span class="location__item-time">4&nbsp;мин</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="location__item"
+              type="button"
+              data-lon="51.1722"
+              data-lat="43.6481"
+              data-zoom="14"
+              aria-pressed="false"
+            >
+              <span class="location__item-main">
+                <span class="location__item-title">Центр города</span>
+                <span class="location__item-text">главные улицы, набережная и&nbsp;инфраструктура</span>
+              </span>
+              <span class="location__item-meta">
+                <img class="location__item-icon" src="images/icon-loc-car.png" alt="" width="36" height="36" loading="lazy">
+                <span class="location__item-time">6&nbsp;мин</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="location__item is-active"
+              type="button"
+              data-lon="51.1743"
+              data-lat="43.6305"
+              data-zoom="16"
+              aria-pressed="true"
+            >
+              <span class="location__item-main">
+                <span class="location__item-title">Собственный пляж и&nbsp;пирс</span>
+                <span class="location__item-text">для отдыха у&nbsp;моря без транспорта и&nbsp;переездов</span>
+              </span>
+              <span class="location__item-meta">
+                <img class="location__item-icon" src="images/icon-loc-walk.png" alt="" width="28" height="40" loading="lazy">
+                <span class="location__item-time">1&nbsp;мин</span>
+              </span>
+            </button>
+          </li>
+          <li>
+            <button
+              class="location__item"
+              type="button"
+              data-lon="51.172663"
+              data-lat="43.630253"
+              data-zoom="16"
+              aria-pressed="false"
+            >
+              <span class="location__item-main">
+                <span class="location__item-title">Яхт-клуб</span>
+                <span class="location__item-text">морские прогулки и&nbsp;активный отдых</span>
+              </span>
+              <span class="location__item-meta">
+                <img class="location__item-icon" src="images/icon-loc-walk.png" alt="" width="28" height="40" loading="lazy">
+                <span class="location__item-time">2&nbsp;мин</span>
+              </span>
+            </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="location__map-wrap">
+        <div class="location__map">
+          <iframe
+            id="location-map"
+            class="location__map-frame"
+            title="Карта расположения Aktau Marina Bay"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <div class="location__contacts">
+          <p class="location__contact">
+            <svg class="location__contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 21s7-5.2 7-11a7 7 0 10-14 0c0 5.8 7 11 7 11z" stroke="currentColor" stroke-width="1.2"/>
+              <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            <span>г.&nbsp;Актау, Микрорайон 4А,&nbsp;55.</span>
+          </p>
+          <p class="location__contact">
+            <svg class="location__contact-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6.5 4h3l1.5 5-2.2 1.2a12 12 0 005.5 5.5L14.5 14 19.5 15.5V19a2 2 0 01-2 2C9.8 21 3 14.2 3 6.5A2.5 2.5 0 015.5 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <a href="tel:+77782395986">+7&nbsp;(778)&nbsp;239-59-86</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <a href="#" class="logo site-footer__logo">
+        <img src="images/logo.png" alt="" class="logo__icon" width="44" height="44">
+        <img src="images/logo2.png" alt="Aktau Marina Bay" class="logo__wordmark" width="180" height="28">
+      </a>
+
+      <nav class="site-footer__nav" aria-label="Навигация в подвале">
+        <ul class="site-footer__nav-list">
+          <li><a href="#why">Почему гости выбирают нас</a></li>
+          <li><a href="#rooms">Номерной фонд</a></li>
+          <li><a href="#biohacking">Центр биохакинга</a></li>
+          <li><a href="#restaurant">Ресторан</a></li>
+          <li><a href="#business">Бизнес</a></li>
+          <li><a href="#concierge">Консьерж-сервис</a></li>
+          <li><a href="#location">Расположение</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__legal">
+        <p>©&nbsp;Aktau Marina Bay</p>
+        <p>Все права защищены</p>
+        <a href="#">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Просмотр фото">
