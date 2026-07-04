@@ -702,16 +702,16 @@ ul {
 /* why-2: 1312×898 — снизу слева, выходит за край */
 .why__photo--2 {
   bottom: 0;
-  left: -14%;
+  left: -10%;
   width: 64%;
   z-index: 1;
 }
 
 /* why-3: 1123×1195 — вертикальная справа */
 .why__photo--3 {
-  top: 18%;
+  bottom: 0;
   right: 0;
-  width: 44%;
+  width: 50%;
   z-index: 2;
 }
 
@@ -845,7 +845,7 @@ ul {
   }
 
   .why__photo--2 {
-    left: -12%;
+    left: -10%;
   }
 
   .why__content {
