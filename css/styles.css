@@ -661,9 +661,9 @@ ul {
   width: min(520px, calc(50% - 16px));
   margin: 0;
   padding-right: 24px;
-  font-size: clamp(18px, 2.4vw, 28px);
+  font-size: clamp(28px, 3.385vw, 135.42px);
   font-weight: 300;
-  line-height: 1.25;
+  line-height: 1.1;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-align: left;
@@ -884,7 +884,7 @@ ul {
   }
 
   .why__title {
-    font-size: clamp(16px, 4.5vw, 22px);
+    font-size: clamp(20px, 5vw, 48px);
     width: calc(100% - 32px);
     left: 16px;
   }
