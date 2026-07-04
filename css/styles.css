@@ -626,6 +626,11 @@ ul {
   opacity: 0.7;
 }
 
+.why__body {
+  position: relative;
+  overflow: visible;
+}
+
 .why__grid {
   display: grid;
   grid-template-columns: 1.5fr 0.68fr;
@@ -634,11 +639,11 @@ ul {
   overflow: visible;
 }
 
-.why .container.why__grid {
+.why .container.why__body {
   overflow: visible;
 }
 
-/* Левая колонка: заголовок поверх коллажа */
+/* Левая колонка — коллаж */
 .why__visual {
   position: relative;
   width: 100%;
@@ -648,29 +653,31 @@ ul {
 
 .why__title {
   position: absolute;
-  top: clamp(8px, 2vw, 20px);
+  top: clamp(12px, 2vw, 24px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
-  width: min(480px, 96%);
+  width: min(420px, 38vw);
   margin: 0;
   font-size: clamp(18px, 2.4vw, 28px);
   font-weight: 300;
   line-height: 1.25;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  text-align: center;
+  text-align: left;
   color: var(--color-white);
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.65);
   pointer-events: none;
 }
 
-/* Коллаж — оригинальные пропорции, наложение без обрезки */
+/* Коллаж — оригинальные пропорции, без обрезки по ширине */
 .why__gallery {
   position: relative;
   width: 100%;
+  max-width: none;
+  overflow: visible;
   aspect-ratio: 680 / 720;
-  min-height: 400px;
+  min-height: 420px;
 }
 
 .why__photo {
@@ -842,13 +849,12 @@ ul {
   }
 
   .why__visual {
-    max-width: 100%;
-    width: calc(100% + 24px);
-    margin-left: -12px;
+    width: 100%;
+    margin-left: 0;
   }
 
   .why__photo--2 {
-    left: -10%;
+    left: -12%;
   }
 
   .why__content {
@@ -856,6 +862,7 @@ ul {
   }
 
   .why__title {
+    width: min(360px, 72vw);
     font-size: clamp(16px, 4.5vw, 22px);
   }
 
