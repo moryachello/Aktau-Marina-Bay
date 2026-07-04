@@ -778,6 +778,44 @@ ul {
   color: rgba(255, 255, 255, 0.5);
 }
 
+/* ===== Block 3: Reasons ===== */
+.reasons {
+  padding: clamp(64px, 8vw, 100px) 0 clamp(80px, 10vw, 120px);
+  background: var(--color-bg);
+}
+
+.reasons__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.reasons__card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(22px, 2.8vw, 36px);
+  min-height: clamp(210px, 17vw, 260px);
+  padding: clamp(28px, 3.2vw, 44px);
+  background: rgba(14, 42, 49, 0.92);
+  border: 1px solid rgba(197, 164, 126, 0.24);
+  border-radius: 18px;
+}
+
+.reasons__icon {
+  width: clamp(64px, 5.5vw, 80px);
+  height: auto;
+}
+
+.reasons__title {
+  max-width: 14em;
+  font-size: clamp(14px, 1.1vw, 17px);
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  color: var(--color-white);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .booking__field {
@@ -861,6 +899,10 @@ ul {
   .why__num {
     font-size: 50px;
   }
+
+  .reasons__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 600px) {
@@ -897,5 +939,20 @@ ul {
 
   .why__divider {
     height: 44px;
+  }
+
+  .reasons {
+    padding: 56px 0 72px;
+  }
+
+  .reasons__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .reasons__card {
+    min-height: 0;
+    padding: 28px 24px;
+    gap: 20px;
   }
 }
