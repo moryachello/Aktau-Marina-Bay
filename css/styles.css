@@ -660,64 +660,45 @@ ul {
   pointer-events: none;
 }
 
-/* Коллаж на CSS Grid — каждая ячейка обрезает фото */
+/* Коллаж — оригинальные пропорции, наложение без обрезки */
 .why__gallery {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, 1fr);
-  aspect-ratio: 56 / 66;
+  position: relative;
   width: 100%;
-  gap: 14px;
+  aspect-ratio: 680 / 720;
+  min-height: 400px;
 }
 
-.why__cell {
-  overflow: hidden;
+.why__photo {
+  position: absolute;
+  height: auto;
+  max-width: none;
   border-radius: 18px;
-  min-width: 0;
-  min-height: 0;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
-}
-
-.why__cell img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
   display: block;
 }
 
-/* Красная зона — набережная сверху */
-.why__cell--1 {
-  grid-column: 1 / 13;
-  grid-row: 1 / 7;
+/* why-1: 1678×1175 — широкая сверху */
+.why__photo--1 {
+  top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1;
 }
 
-/* Синяя зона — ресторан снизу слева, выходит за левый край */
-.why__cell--2 {
-  grid-column: 1 / 8;
-  grid-row: 7 / 13;
+/* why-2: 1312×898 — снизу слева, выходит за край */
+.why__photo--2 {
+  bottom: 0;
+  left: -14%;
+  width: 64%;
   z-index: 1;
-  margin-left: -14%;
 }
 
-/* Зелёная зона — яхты вертикально справа, перекрывает обе */
-.why__cell--3 {
-  grid-column: 6 / 13;
-  grid-row: 4 / 13;
+/* why-3: 1123×1195 — вертикальная справа */
+.why__photo--3 {
+  top: 18%;
+  right: 0;
+  width: 44%;
   z-index: 2;
-}
-
-.why__cell--1 img {
-  object-position: center 40%;
-}
-
-.why__cell--2 img {
-  object-position: center center;
-}
-
-.why__cell--3 img {
-  object-position: center top;
 }
 
 /* Правая колонка — только список */
@@ -861,8 +842,8 @@ ul {
     margin-left: -12px;
   }
 
-  .why__cell--2 {
-    margin-left: -10%;
+  .why__photo--2 {
+    left: -10%;
   }
 
   .why__content {
@@ -871,10 +852,6 @@ ul {
 
   .why__title {
     font-size: clamp(16px, 4.5vw, 22px);
-  }
-
-  .why__gallery {
-    gap: 10px;
   }
 
   .why__num {
@@ -900,7 +877,7 @@ ul {
   }
 
   .why__gallery {
-    gap: 8px;
+    min-height: 320px;
   }
 
   .why__item-body {
