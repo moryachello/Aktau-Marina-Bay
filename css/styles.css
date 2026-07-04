@@ -656,10 +656,10 @@ ul {
   right: auto;
   transform: translateX(-50%);
   z-index: 5;
-  width: min(520px, calc(50% - 16px));
+  width: min(880px, 62%);
   margin: 0;
-  padding-right: 24px;
-  font-size: clamp(28px, 3.385vw, 135.42px);
+  padding-right: 0;
+  font-size: 50px;
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: 0.06em;
@@ -729,7 +729,7 @@ ul {
 
 .why__item {
   display: grid;
-  grid-template-columns: clamp(52px, 7vw, 76px) 1px 1fr;
+  grid-template-columns: 50px 1px 1fr;
   column-gap: clamp(18px, 2.5vw, 28px);
   align-items: center;
   padding: 26px 0;
@@ -744,7 +744,7 @@ ul {
 }
 
 .why__num {
-  font-size: clamp(52px, 6.5vw, 80px);
+  font-size: 50px;
   font-weight: 200;
   line-height: 0.85;
   letter-spacing: -0.02em;
@@ -854,12 +854,13 @@ ul {
   }
 
   .why__title {
-    width: min(360px, calc(100% - 52%));
+    width: min(720px, calc(100% - 32px));
     left: 50%;
+    font-size: 50px;
   }
 
   .why__num {
-    font-size: clamp(44px, 12vw, 64px);
+    font-size: 50px;
   }
 }
 
@@ -885,9 +886,10 @@ ul {
   }
 
   .why__title {
-    font-size: clamp(20px, 5vw, 48px);
+    font-size: clamp(28px, 7vw, 50px);
     width: calc(100% - 32px);
     left: 16px;
+    transform: none;
   }
 
   .why__item {
