@@ -634,7 +634,7 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(28px, 3vw, 44px);
-  align-items: start;
+  align-items: stretch;
   overflow: visible;
 }
 
@@ -650,13 +650,15 @@ ul {
   overflow: visible;
 }
 
+/* Заголовок — по центру всего блока */
 .why__title {
-  position: relative;
+  position: absolute;
+  top: clamp(12px, 2vw, 24px);
   left: 50%;
   transform: translateX(-50%);
-  width: max-content;
-  max-width: 100%;
-  margin: 0 0 clamp(32px, 4vw, 56px);
+  z-index: 5;
+  width: min(520px, calc(50% - 24px));
+  margin: 0;
   font-size: var(--why-heading-size);
   font-weight: 300;
   line-height: 1.1;
@@ -664,6 +666,8 @@ ul {
   text-transform: uppercase;
   text-align: left;
   color: var(--color-white);
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.65);
+  pointer-events: none;
 }
 
 /* Коллаж — оригинальные пропорции, без обрезки по ширине */
@@ -709,9 +713,12 @@ ul {
   z-index: 2;
 }
 
-/* Правая колонка — заголовок + список */
+/* Правая колонка — список по низу коллажа */
 .why__content {
-  align-self: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-self: stretch;
   max-width: none;
 }
 
