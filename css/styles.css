@@ -2804,11 +2804,33 @@ body.lightbox-open {
   }
 
   .restaurant__main {
+    position: relative;
+    isolation: isolate;
     padding:
       clamp(56px, 8vw, 80px)
       24px
       clamp(32px, 5vw, 48px)
       24px;
+  }
+
+  .restaurant__main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    left: calc(50% - 50vw);
+    right: calc(50% - 50vw);
+    background: rgba(10, 31, 36, 0.78);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .restaurant__main-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  .restaurant__shade {
+    background: none;
   }
 
   .restaurant__panel {
@@ -2825,16 +2847,11 @@ body.lightbox-open {
   }
 
   .business__bg {
-    top: auto;
-    left: calc(50% - 50vw);
-    right: calc(50% - 50vw);
-    bottom: 0;
-    height: clamp(260px, 42vw, 360px);
-    background-position: center center;
+    display: none;
   }
 
   .business__inner {
-    padding-bottom: clamp(280px, 46vw, 400px);
+    padding-bottom: var(--business-pad-y);
   }
 
   .business__heading {
