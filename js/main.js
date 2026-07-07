@@ -266,6 +266,7 @@
       { selector: '.bio__title', delay: 0 },
       { selector: '.bio__visual', delay: 80 },
       { selector: '.bio__content', delay: 160 },
+      { selector: '.services__heading', delay: 0 },
       { selector: '.services__card', delayStep: 90 },
       { selector: '.restaurant__main-inner', delay: 0 },
       { selector: '.restaurant__item', delayStep: 80 },
